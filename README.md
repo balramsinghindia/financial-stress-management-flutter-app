@@ -1,30 +1,17 @@
-# flutter_application
+# Flutter Practise Project
 
-A new Flutter project.
+This is a Flutter learning project
 
-## Getting Started
+This is not a boilter plate code as it includes practise examples.
 
-This project is a starting point for a Flutter application that follows the
-[simple app state management
-tutorial](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple).
+features:
+- Stateless component example
+- Stateful component example
+- Routing
+- Image
+- 
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-## Assets
-
-The `assets` directory houses images, fonts, and any other files you want to
-include with your application.
-
-The `assets/images` directory contains [resolution-aware
-images](https://flutter.dev/docs/development/ui/assets-and-images#resolution-aware).
-
-## Localization
-
-This project generates localized messages based on arb files found in
-the `lib/src/localization` directory.
-
-To support additional languages, please visit the tutorial on
-[Internationalizing Flutter
-apps](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
+Upcoming features:
+- State management library
+- Dio for http
+- Dark theme support
