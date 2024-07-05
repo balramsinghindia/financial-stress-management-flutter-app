@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 /// Displays detailed information about a SampleItem.
 // class SampleItemDetailsView extends StatelessWidget {
@@ -53,10 +56,27 @@ class SampleItemDetailsView extends StatefulWidget {
 
 class _SampleItemDetailsViewState extends State<SampleItemDetailsView> {
   String _text = 'Hello, Flutter!';
+  String _apiResponse = 'This is a sample text inside a container.';
+
+
   void _changeText() {
     setState(() {
       _text = _text == 'Hello, Flutter!' ? 'Bye, Flutter!' : 'Hello, Flutter!';
     });
+  }
+
+  Future<void> _fetchData() async {
+    final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts/1'));
+
+    if (response.statusCode == 200) {
+      setState(() {
+        _apiResponse = json.decode(response.body)['title'];
+      });
+    } else {
+      setState(() {
+        _apiResponse = 'Failed to load data.';
+      });
+    }
   }
 
 
@@ -93,6 +113,17 @@ class _SampleItemDetailsViewState extends State<SampleItemDetailsView> {
               child: Text(
                 'This is a sample text inside a container.',
                 style: TextStyle(fontSize: 16),
+              ),
+            ),
+              GestureDetector(
+              onTap: _fetchData,
+              child: Container(
+                padding: EdgeInsets.all(10),
+                color: Colors.grey[200],
+                child: Text(
+                  _apiResponse,
+                  style: TextStyle(fontSize: 16),
+                ),
               ),
             ),
           ],
