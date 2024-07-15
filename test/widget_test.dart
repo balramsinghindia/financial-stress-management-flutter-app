@@ -9,6 +9,7 @@
 // more information about Widget testing.
 
 import 'package:flutter/material.dart';
+import '../lib/src/sample_feature/sample_item_details_view.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -17,7 +18,7 @@ void main() {
       // Define a Widget
       const myWidget = MaterialApp(
         home: Scaffold(
-          body: Text('Hello'),
+          body: Text('fddf'),
         ),
       );
 
@@ -26,6 +27,14 @@ void main() {
 
       // Verify myWidget shows some text
       expect(find.byType(Text), findsOneWidget);
+    });
+
+    test('Counter value should be incremented', () {
+      final counter = SampleItemDetailsView();
+
+  
+
+      expect(counter, SampleItemDetailsView);
     });
   });
 }
